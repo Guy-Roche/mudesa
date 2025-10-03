@@ -28,61 +28,30 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="#sidebarDashboards" data-bs-toggle="collapse">
+                                <a href="{{url('/admin/dashboard')}}" data-bs-toggle="collapse">
                                     <i data-feather="home"></i>
-                                    <span> Dashboard </span>
-                                    <span class="menu-arrow"></span>
+                                    <span> Tableau de Board </span>
                                 </a>
-                                <div class="collapse" id="sidebarDashboards">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="index.html" class="tp-link">Analytical</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce.html" class="tp-link">E-commerce</a>
-                                        </li>
-                                    </ul>
-                                </div>
+
                             </li>
                 
-                            <!-- <li>
-                                <a href="landing.html" target="_blank">
-                                    <i data-feather="globe"></i>
-                                    <span> Landing </span>
-                                </a>
-                            </li> -->
 
-                            <li class="menu-title">Pages</li>
 
                             <li>
-                                <a href="#sidebarAuth" data-bs-toggle="collapse">
+                                <a href="#adherents" data-bs-toggle="collapse">
                                     <i data-feather="users"></i>
-                                    <span> Authentication </span>
+                                    <span> Gestion Adhérants </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarAuth">
+                                <div class="collapse" id="adherents">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="auth-login.html" class="tp-link">Log In</a>
+                                            <a href="{{route('admin.familles')}}" class="tp-link">Familles</a>
                                         </li>
                                         <li>
-                                            <a href="auth-register.html" class="tp-link">Register</a>
+                                            <a href="{{route('admin.adherents')}}" class="tp-link">Liste Adhérants</a>
                                         </li>
-                                        <li>
-                                            <a href="auth-recoverpw.html" class="tp-link">Recover Password</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-lock-screen.html" class="tp-link">Lock Screen</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-confirm-mail.html" class="tp-link">Confirm Mail</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-verification.html" class="tp-link">Email Verification</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-logout.html" class="tp-link">Logout</a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </li>

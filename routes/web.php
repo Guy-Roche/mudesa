@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdherentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -31,10 +32,27 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Admin Profile Routes
     Route::get('/admin/editprofile', [AdminController::class, 'editprofile'])->name('admin.editprofile');
     Route::put('/admin/updateprofile', [AdminController::class, 'updateprofile'])->name('admin.updateprofile');
     Route::patch('/admin/updatepassword', [AdminController::class, 'updatepassword'])->name('admin.updatepassword');
+
+    // Famille Routes
+    Route::get('/admin/familles', [AdherentController::class, 'familles'])->name('admin.familles');
+    Route::get('/admin/famille/add', [AdherentController::class, 'familleAdd'])->name('admin.famille.add');
+    Route::post('/admin/famille/save', [AdherentController::class, 'familleSave'])->name('admin.famille.save');
+    Route::get('/admin/famille/edit/{id}', [AdherentController::class, 'familleEdit'])->name('admin.famille.edit');
+    Route::put('/admin/famille/update/{id}', [AdherentController::class, 'familleUpdate'])->name('admin.famille.update');
+    Route::get('/admin/famille/delete/{id}', [AdherentController::class, 'familleDelete'])->name('admin.famille.delete');
+
+    // Adhérent Routes
+    Route::get('/admin/adherents', [AdherentController::class, 'adherents'])->name('admin.adherents');
+    Route::get('/admin/adherent/add', [AdherentController::class, 'adherentAdd'])->name('admin.adherent.add');
+    Route::post('/admin/adherent/save', [AdherentController::class, 'adherentSave'])->name('admin.adherent.save');
+    Route::get('/admin/adherent/edit/{id}', [AdherentController::class, 'adherentEdit'])->name('admin.adherent.edit');
+    Route::put('/admin/adherent/update/{id}', [AdherentController::class, 'adherentUpdate'])->name('admin.adherent.update');
+    Route::get('/admin/adherent/delete/{id}', [AdherentController::class, 'adherentDelete'])->name('admin.adherent.delete');
 });
 
 require __DIR__.'/auth.php';
